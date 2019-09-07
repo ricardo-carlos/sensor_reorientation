@@ -34,7 +34,7 @@ def geo_distance(latitudes, longitudes):
 	lon = np.radians(longitudes)
 	lat = np.radians(latitudes)
 
-	for i in range(1, len(lon)-1):
+	for i in range(1, len(lon)):
 		x = (lon[i] - lon[i-1]) * np.cos( (lat[i]+lat[i-1])/2.0 )
 		y = lat[i] - lat[i-1]
 		distance += 6371e3 * np.sqrt(x*x + y*y ) 
@@ -50,7 +50,7 @@ def utm_distance(easting, northing):
 	
 	distance = 0	
 
-	for i in range(1, len(northing)-1):
+	for i in range(1, len(northing)):
 		x = easting[i] - easting[i-1]
 		y = northing[i] - northing[i-1]
 		distance += np.sqrt(x*x + y*y ) 

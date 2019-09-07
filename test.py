@@ -63,6 +63,7 @@ bearing = pm_180(bearing)
 yaw = bearing - azimuth 
 yaw = pm_180(yaw)
 median_yaw = np.median(yaw)
+
 t = np.linspace(0, len(azimuth)/50.0, len(azimuth))
 
 plt.title('Estimated Yaw')
@@ -79,6 +80,7 @@ acc_x = sma_filter(r[:,0])
 acc_y = sma_filter(r[:,1])
 acc_z = sma_filter(r[:,2])
 speed = sma_filter(data['speed'])
+
 t = np.linspace(0, len(acc_x)/50.0, len(acc_x))
 
 plt.title('Reoriented Acceleration')
